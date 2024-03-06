@@ -18,7 +18,7 @@ const ContactPage = () => {
     setError(null);
     navigate("/");
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: "POST",
         body: JSON.stringify({
           email,
@@ -27,7 +27,7 @@ const ContactPage = () => {
         }),
         headers: {
           "Content-Type": "application/json",
-          Origin: "http://localhost:5173",
+          Origin: `${import.meta.env.VITE_CLIENT_URL}`,
         },
         withCredentials: true,
       });
@@ -65,7 +65,7 @@ const ContactPage = () => {
       <div className="text-white mt-40 md:mt-0 md:my-0">
         <div className="flex lg:justify-center mr-10 gap-y-2 ">
           <img
-            src="../../public/assets/logo.jpeg"
+            src="/assets/logo.jpeg"
             className="rounded-lg"
             alt=""
           />

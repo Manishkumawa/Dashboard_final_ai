@@ -27,7 +27,7 @@ const Navbar = () => {
       <h1 className="text-3xl font-semibold font-primary flex items-center justify-between gap-x-2">
         <a href="/">
           <img
-            src="../../public/assets/logo.jpeg"
+            src="/assets/logo.jpeg"
             width={40}
             className="rounded-md"
             alt="logo"

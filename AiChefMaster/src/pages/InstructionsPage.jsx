@@ -73,7 +73,7 @@ const InstructionsPage = () => {
   console.log(formData)
   console.log(userToken)
     try {
-      const response = await fetch("http://localhost:5000/chef/createDish", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/chef/createDish`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${userToken.access_token}`,

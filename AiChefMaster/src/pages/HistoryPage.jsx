@@ -37,12 +37,12 @@ const History = () => {
     cooking_time: "",
     description: "",
     kitchen_equipments: "",
-    
+
   });
   const handleClick = async (id) => {
     setId(id);
     try {
-      const apiUrl = `http://localhost:5000/api/dish/${id}`;
+      const apiUrl = `${import.meta.env.VITE_API_URL}/api/dish/${id}`;
       let textDecoder = new TextDecoder("utf-8");
       setisLoading(true);
       const response = await axios
@@ -87,7 +87,7 @@ const History = () => {
   }, [id]);
   const fetchDishes = async () => {
     try {
-      const apiUrl = "http://localhost:5000/myAccount";
+      const apiUrl = `${import.meta.env.VITE_API_URL}/myAccount`;
       let textDecoder = new TextDecoder("utf-8");
       setisLoading(true);
       const response = await axios
@@ -191,9 +191,8 @@ const History = () => {
 
                             // setOpenkaro(true);
                           }}
-                          className={`${
-                            isLoading ? "cursor-wait" : "cursor-pointer"
-                          } text-left font-semibold text-zinc-500 flex items-center gap-2 `}
+                          className={`${isLoading ? "cursor-wait" : "cursor-pointer"
+                            } text-left font-semibold text-zinc-500 flex items-center gap-2 `}
                         >
                           <p>see more</p> <BsFillArrowUpRightSquareFill />
                         </button>
@@ -217,9 +216,8 @@ const History = () => {
               })
             ) : (
               <div
-                className={`${
-                  isLoading ? "flex" : "hidden"
-                } min-w-screen  justify-center items-center`}
+                className={`${isLoading ? "flex" : "hidden"
+                  } min-w-screen  justify-center items-center`}
               >
                 <CircularProgress color="inherit" />
               </div>
